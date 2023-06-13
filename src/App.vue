@@ -1,14 +1,21 @@
 <script>
-export default{
-  methods:{
+import TheHeader from './components/TheHeader.vue'
+import TheBarraNav from './components/TheBarraNav.vue'
+
+export default {
+  components: {
+    TheHeader,
+    TheBarraNav,
   },
-  data(){
+  data() {
     return {
       alunos: [
         {
           id: '0',
+          nome: 'Patrick Santos Piotrowski',
+          nascimento: '01/06/2000',
           materias: {
-            m1:{
+            m1: {
               nome: 'Português',
               provas: {
                 p1: '10'
@@ -23,25 +30,31 @@ export default{
 </script>
 
 <template>
-  <TheHeader>
-    <h2>CRUD de matérias, provas e alunos</h2>
-  </TheHeader>
-
-  
-
+  <div class="container">
+    <TheHeader>
+      <h2>CRUD de matérias, provas e alunos</h2>
+    </TheHeader>
+    <TheBarraNav></TheBarraNav>
+  </div>
 </template>
 
 <style>
-*{
-  color: rgb(255,255,255);
+* {
+  color: rgb(255, 255, 255);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
 }
-body{
-  display: flex;
+
+body {
   background-color: rgb(40, 40, 40);
-  margin: 1rem;
   align-items: center;
   justify-content: center;
+  margin: 1rem;
 }
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
 </style>
